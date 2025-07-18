@@ -315,10 +315,9 @@ section {
   background: var(--card-bg);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgb(0, 0, 0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.26);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(30px);
+
 }
 
 .project-item.animate-in {
@@ -802,34 +801,50 @@ input::placeholder {
 /* RESPONSIVIDADE MENU DE HAMBURGUER */
 /* Exibição para celulares */
 @media (max-width: 768px) {
-    .nav-menu {
-        display: flex; /* Ativa o flexbox */
-        flex-direction: column; /* Organiza os itens em coluna */
-        align-items: center; /* Centraliza os itens */
-        width: auto; /* Ajuste automático para o conteúdo */
-        min-width: 150px; /* Garante espaço suficiente */
-        white-space: nowrap; /* Impede quebra de linha */
-        margin-left: 250px;
-        margin-top: 18px;
-        
-        
+        .nav-menu {
+        display: none; /* Oculto por padrão */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #007bff;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        min-width: 150px;
+        white-space: nowrap;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.show {
+        display: flex; /* Exibe quando tem a classe 'show' */
     }
 
     .nav-menu a {
-        display: block; /* Mantém os links um abaixo do outro */
-        padding: 5px 10px; /* Ajusta o espaçamento */
-        ;
-        width: 100%; /* Faz os links ocuparem toda a largura */
-        text-align: center; /* Centraliza o texto */
+        display: block;
+        padding: 10px 15px;
+        width: 100%;
+        text-align: center;
         color: white;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: none;
     }
 
     .menu-button {
         position: absolute;
         top: 20px;
-        left: 375px; /* Move o ícone do menu para a esquerda */
+        right: 20px; /* Posicionado à direita */
         color: white;
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
     }
+
 }
 
 

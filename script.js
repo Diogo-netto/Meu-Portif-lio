@@ -96,40 +96,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-/* falta colocar o botão de enter funcionar também */
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    const menubutton = document.getElementById("menu-button");
-    const navmenu = document.getElementById("nav-menu");
+    const menuButton = document.getElementById("menu-button");
+    const navMenu = document.getElementById("nav-menu");
 
-    menubutton.addEventListener("click", function () {
-        if(navmenu.style.display == "block"){
-           navmenu.style.display = "none";
-        }else{
-          navmenu.style.display = "block"
-        }
+    menuButton.addEventListener("click", function () {
+        navMenu.classList.toggle("show");
     });
-
 });
-
-
-
-
-
-
-
-
-
-
-function toggleMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.
-    navM
-classList.toggle('show');
-}
 
 
 
