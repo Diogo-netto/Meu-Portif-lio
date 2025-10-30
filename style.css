@@ -814,15 +814,30 @@ input::placeholder {
         gap: 20px; /* Espaçamento entre os ícones */
         margin-top: 10px;
     }
+
+    .name {
+        font-size: 15px;
+    }
     
     .footer-section .social-links a {
-        font-size: 20px;
+        font-size: 18px;
         color: #fff;
         transition: transform 0.3s, color 0.3s;
     }
     
     .footer-section .social-links a:hover {
         transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
+    }
+
+    .whatsapp-float {
+        margin-bottom: 188px;
+        font-size: 17px;
+        border: 8px;
+    }
+
+    .privacy p {
+        margin-bottom: 20px;
+
     }
     
    
@@ -928,6 +943,13 @@ input::placeholder {
         border-top: 2px solid #0056b3; /* Adiciona uma linha superior para destaque */
     }
     
+
+    .name {
+        font-size: 15px;
+        margin-left: 59px;
+    }
+
+    
     .footer-section .social-links {
         display: flex;
         justify-content: center;
@@ -936,7 +958,7 @@ input::placeholder {
     }
     
     .footer-section .social-links a {
-        font-size: 20px;
+        font-size: 18px;
         color: #fff;
         transition: transform 0.3s, color 0.3s;
     }
@@ -955,6 +977,14 @@ input::placeholder {
     #topo {
         margin-bottom: 20px;
     }
+
+
+    .whatsapp-float {
+        margin-bottom: 157px;
+        font-size: 17px;
+        border: 8px;
+    }
+    
     
 }
 
