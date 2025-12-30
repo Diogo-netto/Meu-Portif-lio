@@ -19,9 +19,8 @@ Atualmente, estudo e aplico **frameworks modernos como React**, além de expandi
 - CSS3  
 - JavaScript  
 - Bootstrap  
-- Tailwind CSS  
-- React.js  
-- Git e GitHub  
+- Git e GitHub
+- javascript  
 
 ---
 
