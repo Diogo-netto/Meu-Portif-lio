@@ -36,6 +36,6 @@ Todos os projetos foram desenvolvidos com foco em **responsividade**, **design l
 ---
 
 ## 🌐 Acesse o portfólio
-🔗 https://diogo-netto.github.io/Portfolio  
+🔗 https://diogo-netto.github.io/Meu-Portif-lio/ 
 
 
