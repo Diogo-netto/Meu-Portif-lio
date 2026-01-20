@@ -65,37 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
-
-
-
-/* js referente a formulário botão "enter" */
-document.addEventListener("DOMContentLoaded", function () {
-    const formulario = document.querySelector("form"); // Seleciona o formulário
-
-    formulario.addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault(); // Previne o envio do formulário
-
-            // Tenta focar no próximo campo
-            const formElements = Array.from(formulario.elements); // Todos os elementos do formulário
-            const currentIndex = formElements.indexOf(event.target); // Index do elemento atual
-            const nextElement = formElements[currentIndex + 1]; // Próximo elemento
-
-            if (nextElement) {
-                nextElement.focus(); // Move o foco para o próximo campo
-            }
-        }
-    });
-});
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.getElementById("menu-button");
     const navMenu = document.getElementById("nav-menu");
@@ -135,5 +104,8 @@ document.getElementById('modal').addEventListener('click', function (e) {
     this.style.display = 'none';
   }
 });
+
+
+
 
 
