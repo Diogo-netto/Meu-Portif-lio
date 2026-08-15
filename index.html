@@ -1,237 +1,537 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Diogo Netto - Desenvolvedor Front-end com experiência em HTML, CSS e JavaScript.">
-    <meta name="keywords" content="desenvolvedor web, front-end, HTML, CSS, JavaScript, React, portfólio">
-    <meta name="author" content="Diogo Netto">
+    <title>Diogo Netto | Desenvolvedor Front-end • React, TypeScript e Firebase</title>
+    <meta name="description" content="Portfólio de Diogo Netto, Desenvolvedor Front-end especializado na criação de interfaces modernas e sistemas web com React, TypeScript, JavaScript e Firebase.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="canonical" href="https://diogo-netto.github.io/">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Portfólio - Diogo Netto | Desenvolvedor Front-End">
-    <meta property="og:description" content="Conheça meus projetos e habilidades em desenvolvimento front-end.">
-    <meta property="og:image" content="URL_da_imagem_de_preview">
-    <meta property="og:url" content="URL_do_seu_portfolio">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Diogo Netto | Desenvolvedor Front-end">
+    <meta property="og:description" content="Portfólio de Diogo Netto, Desenvolvedor Front-end especializado na criação de interfaces modernas e sistemas web com React, TypeScript, JavaScript e Firebase.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://diogo-netto.github.io/">
+    <!-- ADICIONAR URL DA IMAGEM DE PREVIEW -->
+    <meta property="og:image" content="#">
 
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Portfólio - Diogo Netto | Desenvolvedor Front-End">
-    <meta name="twitter:description" content="Conheça meus projetos e habilidades em desenvolvimento front-end.">
-    <meta name="twitter:image" content="URL_da_imagem_de_preview">
-    <!-- Ícone -->
+    <meta name="twitter:title" content="Diogo Netto | Desenvolvedor Front-end">
+    <meta name="twitter:description" content="Especializado na criação de interfaces modernas e sistemas web.">
+    <!-- ADICIONAR URL DA IMAGEM DE PREVIEW -->
+    <meta name="twitter:image" content="#">
+
+    <!-- Favicon -->
     <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <title>Portfólio-Diogo josé Morais Netto</title>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Diogo José Morais Netto",
+      "jobTitle": "Desenvolvedor Front-end",
+      "url": "https://diogo-netto.github.io/",
+      "sameAs": [
+        "https://github.com/Diogo-netto",
+        "#" 
+      ]
+    }
+    </script>
 </head>
 <body>
-   <!-- Cabeçalho -->
-    <header>
-        <button id="menu-button" class="menu-button">&#9776</button>
-        <nav id="nav-menu" class="nav-menu">
-            <a href="index.html">Início</a>
-            <a href="#especialidades">Especialidades</a>
-            <a href="#sobre">Sobre mim</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#fala">Contato</a>
-        </nav>
-        <div class="principal">
-            <div class="logo">
-                <a href="index.html">
-                    <p>Diogo Netto</p>
-                </a>
-            </div>
-            <div class="menu">
-                <a href="index.html">Início</a>
-                <a href="#especialidades">Especialidades</a>
-                <a href="#sobre">Sobre mim</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#fala">Contato</a>
-            </div>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header id="header" class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Diogo Netto</a>
+            
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#stack" class="nav-link">Stack</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="#experiencia" class="nav-link">Experiência prática</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <a href="#contato" class="btn btn-primary nav-cta">Vamos conversar</a>
+            </nav>
         </div>
     </header>
-<!-- Fim do cabeçalho -->
 
-<!-- Main -->
-<main>
-  <!-- Parte 1 -->
-        <section class="part1">
-            <div class="titulo">
-                <div class="texto">
-                <h1>Olá, eu sou o Diogo Netto-Dev Front-End</h1>
-                <p>Atuo no desenvolvimento de interfaces modernas e responsivas utilizando HTML5, CSS3 e JavaScript, com foco em organização, usabilidade e performance. Trabalho com Tailwind CSS e Bootstrap para agilizar layouts e versionamento de código com Git e GitHub.. No desenvolvimento de aplicações front-end.</p>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="container hero-container">
+                <div class="hero-content animate-on-scroll">
+                    <span class="tag">DESENVOLVIMENTO WEB • SISTEMAS • FIREBASE</span>
+                    <h1 class="hero-title">Desenvolvedor Front-end criando interfaces e sistemas para problemas reais.</h1>
+                    <p class="hero-subtitle">
+                        Desenvolvo interfaces modernas e sistemas web voltados para operações reais de negócios, unindo experiência do usuário, regras de negócio, organização de dados e performance com <span class="highlight">React</span>, <span class="highlight">TypeScript</span> e <span class="highlight">Firebase</span>. Atuo como desenvolvedor independente construindo soluções de gestão práticas para negócios locais.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projetos" class="btn btn-primary">Ver meus projetos</a>
+                        <a href="#contato" class="btn btn-outline">Falar comigo</a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://github.com/Diogo-netto" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <!-- ADICIONAR LINK DO LINKEDIN ABAIXO -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual animate-on-scroll delay-1">
+                    <div class="abstract-dashboard">
+                        <div class="dash-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="dash-body">
+                            <div class="dash-sidebar"></div>
+                            <div class="dash-content">
+                                <div class="dash-card">
+                                    <i class="bi bi-braces"></i>
+                                    <span>React & TS</span>
+                                </div>
+                                <div class="dash-card">
+                                    <i class="bi bi-database"></i>
+                                    <span>Firebase</span>
+                                </div>
+                                <div class="dash-card">
+                                    <i class="bi bi-diagram-3"></i>
+                                    <span>Lógica & Dados</span>
+                                </div>
+                                <div class="dash-card">
+                                    <i class="bi bi-rocket"></i>
+                                    <span>Deploy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- Fim da parte 1 -->
-         
-        <!-- Parte 2 -->
-        <section class="part2" id="especialidades">
-            <div class="especialidades">
-                <h1>Minhas <span>Especialidades</span></h1>
-            </div>
-             
-        <div class="card-container">
-                <div class="card1">
-                  <i class="bi bi-code-square"></i>
-                  <h3>Websites</h3>
-                  <p>Desenvolvimento de websites modernos, responsivos e bem estruturados, com foco em usabilidade e experiência do usuário. Atuo na criação de páginas institucionais e projetos personalizados, aplicando boas práticas de <strong>HTML5, CSS3, JavaScript, Bootstrap e Tailwind CSS</strong>para garantir desempenho, organização e manutenção do código.</p>
-                  <i class="bi bi-filetype-html"></i>
-                  <i class="bi bi-filetype-css"></i>
-                  <i class="bi bi-filetype-js"></i>
-                  <i class="fab fa-react"></i>
-                  
-                </div>
 
-              <div class="card">
-                <div class="card1">
-                    <i class="bi bi-cart"></i>
-                    <h3>Landing Pages</h3>
-                    <p>Criação de landing pages modernas e otimizadas para conversão, com foco em clareza, usabilidade e performance. Desenvolvimento de layouts responsivos que comunicam a mensagem de forma objetiva.</p>
-                    <i class="bi bi-phone"></i>
-                    <i class="bi bi-window"></i>
-                    <i class="bi bi-grid"></i>
-                    <i class="bi bi-display"></i>
+        <!-- Indicadores Section -->
+        <section id="indicadores" class="indicadores section bg-surface">
+            <div class="container indicadores-container animate-on-scroll">
+                <div class="indicador-item">
+                    <i class="bi bi-check-circle"></i>
+                    <div class="indicador-text">
+                        <strong>Projetos em uso real</strong>
+                        <span>Soluções utilizadas em operações reais.</span>
+                    </div>
                 </div>
-              </div>
-        </div>
-        </section>
-        <!-- Fim da parte 2 -->
-         
-        <!-- Parte 3 -->
-        <section class="part3" id="sobre">
-            <div class="apresentar">
-                <h1>Muito Prazer</h1>
-                <span>Diogo Netto - Desenvolvedor Front-End</span>
-                <p>Me chamo Diogo José Morais Netto, sou graduado em Análise e Desenvolvimento de Sistemas e atuo como desenvolvedor front-end com foco na criação de interfaces modernas, funcionais e responsivas. Possuo experiência prática no desenvolvimento de sites utilizando HTML5, CSS3 e JavaScript,Bootstrap e Tailwind CSS aplicando boas práticas de organização, usabilidade e desempenho.
-
-                   Atualmente, amplio meus conhecimentos em frameworks modernos como React, Angular e Vue.js, buscando evoluir constantemente na construção de aplicações web mais dinâmicas e escaláveis. Meu portfólio reúne projetos de diferentes segmentos — como escritórios, lojas, sistemas e landing pages — sempre desenvolvidos com atenção ao design limpo, à experiência do usuário e à eficiência do código. Gosto de transformar ideias em soluções digitais reais, unindo estética e funcionalidade..</p>
+                <div class="indicador-item">
+                    <i class="bi bi-code-slash"></i>
+                    <div class="indicador-text">
+                        <strong>Do código ao deploy</strong>
+                        <span>Desenvolvimento, versionamento e publicação.</span>
+                    </div>
+                </div>
+                <div class="indicador-item">
+                    <i class="bi bi-buildings"></i>
+                    <div class="indicador-text">
+                        <strong>Sistemas orientados ao negócio</strong>
+                        <span>Interfaces construídas a partir de processos reais.</span>
+                    </div>
+                </div>
             </div>
         </section>
-        <!-- Fim da parte 3 -->
 
-<section id="projetos">
-              <div class="container">
-              <h2 class="section-title">Projetos</h2>
-
-    <div class="projects-grid">
-              <!-- Projeto 1 -->
-             <div class="project-card">
-                 <div class="project-img-wrapper">
-                        <img src="img/Captura de tela 2025-09-21 200136.png" alt="Projeto 1" class="project-image" data-image="img/Captura de tela 2025-09-21 200136.png">
-                 </div>
-                <div class="project-info">
-                   <h3>Sistema de Login</h3>
-                   <p>Este projeto apresenta um sistema de login e cadastro completo e funcional, desenvolvido do zero. Utilizando HTML, CSS e JavaScript puros, a plataforma oferece um fluxo seguro e direto para a autenticação de usuários. Ele demonstra habilidades sólidas em desenvolvimento front-end, garantindo uma experiência de usuário intuitiva e fluida.</p>
-                   <a href="https://diogo-netto.github.io/Pagina-de-Login-/" target="_blank" class="project-link">Ver projeto</a>
+        <!-- Sobre Mim Section -->
+        <section id="sobre" class="sobre section">
+            <div class="container animate-on-scroll">
+                <div class="section-header">
+                    <h2 class="section-title">Sobre mim</h2>
                 </div>
-             </div>
-            <!-- Fim do Projeto 1 -->
-
-      <!-- Projeto 2 -->
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                <img src="img/Captura de tela 2025-09-21 193750.png" alt="Projeto 2" class="project-image" data-image="img/Captura de tela 2025-09-21 193750.png">
-             </div>
-              <div class="project-info">
-                <h3>Site de Advocacia</h3>
-                <p>Construída com HTML, CSS e JavaScript, nossa plataforma utiliza o Bootstrap para garantir um design responsivo e moderno. Essa escolha tecnológica resulta em um sistema leve e rápido, otimizado para qualquer dispositivo. Para você, isso significa uma navegação fluida, acesso fácil de qualquer lugar e um ambiente digital seguro e confiável para todas as suas necessidades jurídicas.</p>
-                <a href="https://diogo-netto.github.io/Projeto-Advocacia/" target="_blank" class="project-link">Ver projeto</a>
-              </div>
+                <div class="sobre-content">
+                    <div class="sobre-text">
+                        <span class="tag tag-sm">Análise e Desenvolvimento de Sistemas</span>
+                        <p>Meu nome é Diogo José Morais Netto. Sou graduado em Análise e Desenvolvimento de Sistemas.</p>
+                        <p>Atuo com desenvolvimento Front-end e desenvolvimento de sistemas web. Minha experiência prática inclui desde sites institucionais premium e landing pages até sistemas complexos envolvendo estoque, vendas, clientes, caixa, relatórios financeiros, agendamentos e persistência em banco de dados.</p>
+                        <p>Meu foco é a evolução profissional contínua e o profundo interesse em resolver problemas operacionais reais através de software bem estruturado, limpo e focado no usuário.</p>
+                    </div>
+                </div>
             </div>
-      <!-- Fim do Projeto 2 -->
+        </section>
 
-      <!-- Projeto 3 -->
-      <div class="project-card">
-        <div class="project-img-wrapper">
-          <img src="img/Captura de tela 2025-11-02 112357.png" alt="Projeto 3" class="project-image" data-image="img/Captura de tela 2025-11-02 112357.png">
-        </div>
-        <div class="project-info">
-          <h3>Academia LimaDuartina de Tenis de Mesa</h3>
-          <p>Este projeto apresenta o site de uma academia de tênis de mesa moderna e dinâmica, desenvolvido do zero com HTML, CSS e JavaScript. A plataforma destaca informações sobre aulas, treinadores e eventos, com um design responsivo e atraente. O projeto demonstra domínio em front-end e foco na experiência do usuário, transmitindo energia, movimento e profissionalismo.</p>
-          <a href="https://lima-duarte-tenis-de-mesa.vercel.app/" target="_blank" class="project-link">Ver projeto</a>
-        </div>
-      </div>
-      <!-- Fim do Projeto 3 -->
+        <!-- Tecnologias Section -->
+        <section id="stack" class="stack section bg-surface">
+            <div class="container animate-on-scroll">
+                <div class="section-header center">
+                    <h2 class="section-title">Tecnologias que utilizo</h2>
+                </div>
+                <div class="stack-grid">
+                    <div class="stack-category">
+                        <h3>Front-end</h3>
+                        <ul class="tech-list">
+                            <li><i class="bi bi-filetype-html"></i> HTML5</li>
+                            <li><i class="bi bi-filetype-css"></i> CSS3</li>
+                            <li><i class="bi bi-file-earmark-code"></i> JavaScript</li>
+                            <li><i class="bi bi-braces-asterisk"></i> React</li>
+                            <li><i class="bi bi-filetype-tsx"></i> TypeScript</li>
+                            <li><i class="bi bi-wind"></i> Tailwind CSS</li>
+                            <li><i class="bi bi-bootstrap"></i> Bootstrap</li>
+                        </ul>
+                    </div>
+                    <div class="stack-category">
+                        <h3>Dados e Serviços</h3>
+                        <ul class="tech-list">
+                            <li><i class="bi bi-fire"></i> Firebase</li>
+                            <li><i class="bi bi-database"></i> Firestore</li>
+                            <li><i class="bi bi-hdd"></i> LocalStorage</li>
+                            <li><i class="bi bi-save"></i> Persistência</li>
+                        </ul>
+                    </div>
+                    <div class="stack-category">
+                        <h3>Ferramentas e Workflow</h3>
+                        <ul class="tech-list">
+                            <li><i class="bi bi-git"></i> Git</li>
+                            <li><i class="bi bi-github"></i> GitHub</li>
+                            <li><i class="bi bi-terminal"></i> Git Bash</li>
+                            <li><i class="bi bi-box-seam"></i> NPM</li>
+                            <li><i class="bi bi-lightning-charge"></i> Vite</li>
+                        </ul>
+                    </div>
+                    <div class="stack-category">
+                        <h3>Deploy e Hospedagem</h3>
+                        <ul class="tech-list">
+                            <li><i class="bi bi-triangle"></i> Vercel</li>
+                            <li><i class="bi bi-cloud-arrow-up"></i> Firebase Hosting</li>
+                            <li><i class="bi bi-globe"></i> GitHub Pages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-       <!-- Projeto 4 -->
-      <div class="project-card">
-        <div class="project-img-wrapper">
-          <img src="img/Captura de tela 2026-01-20 134342.png" alt="Projeto 3" class="project-image" data-image="img/Captura de tela 2026-01-20 134342.png">
-        </div>
-        <div class="project-info">
-          <h3>Banho e Tosa </h3>
-          <p>Este projeto apresenta o site institucional de um pet shop, com foco em design moderno, navegação simples e experiência do usuário.
-A interface transmite cuidado, carinho e profissionalismo, alinhada ao segmento pet.
-O site foi desenvolvido com layout responsivo e estrutura clara para apresentação dos serviços.
-O projeto evidencia boas práticas de front-end e atenção aos detalhes visuais..</p>
-          <a href="https://pet-shop-cantinho-do-pelo.vercel.app/" target="_blank" class="project-link">Ver projeto</a>
-        </div>
-      </div>
+        <!-- Projetos Section -->
+        <section id="projetos" class="projetos section">
+            <div class="container">
+                <div class="section-header center animate-on-scroll">
+                    <h2 class="section-title">Projetos em destaque</h2>
+                    <p class="section-subtitle">Algumas soluções que desenvolvi para necessidades reais.</p>
+                </div>
+                
+                <div class="projetos-grid">
+                    
+                    <!-- Projeto 1 -->
+                   <article class="projeto-card animate-on-scroll">
+    <div class="projeto-header">
+        <span class="projeto-categoria">ERP • Pet & Agro</span>
+        <span class="projeto-status status-real"><i class="bi bi-circle-fill"></i> Sistema real</span>
     </div>
-  </div>
-  <!-- Fim dos Projetos -->
+    <!-- NOVO TÍTULO PROFISSIONAL -->
+    <h3 class="projeto-titulo">AgroGestão ERP & PDV</h3>
+    <p class="projeto-descricao">Sistema completo de gestão ERP desenvolvido para otimizar e automatizar operações comerciais no setor Pet & Agro.</p>
+    <div class="projeto-detalhes">
+        <strong>Problema & Solução:</strong>
+        <p>Criado para centralizar a administração e a frente de caixa, abrangendo controle de estoque, gestão de vendas e um cadastro detalhado de clientes. A aplicação conta com arquitetura resiliente para funcionamento offline, garantindo que a operação nunca pare por quedas de conexão. Inclui também um módulo financeiro robusto com controle de crédito (fiado), relatórios precisos de fechamento, rotinas de backup e controle de acesso baseado em regras de negócio sólidas.</p>
+    </div>
+    <div class="projeto-tech">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Firebase</span>
+        <span class="tech-tag">Firestore</span>
+    </div>
+    <div class="projeto-links">
+        <!-- LINK APONTANDO PARA A NOVA PÁGINA DE PREVIEW -->
+        <a href="demo-agro.html" class="btn btn-sm btn-primary"><i class="bi bi-image"></i> Ver Interface</a>
+    </div>
+</article>
 
+                    <!-- Projeto 2 -->
+                    <article class="projeto-card animate-on-scroll">
+                        <div class="projeto-header">
+                            <span class="projeto-categoria">PDV • Gestão Comercial</span>
+                            <span class="projeto-status status-dev"><i class="bi bi-circle-fill"></i> Em desenvolvimento</span>
+                        </div>
+                        <h3 class="projeto-titulo">Sistema Bar Vila</h3>
+                        <p class="projeto-descricao">Sistema web desenvolvido para substituir processos manuais de um pequeno bar e agilizar principalmente a operação de balcão.</p>
+                        <div class="projeto-detalhes">
+                            <strong>Funcionalidades:</strong>
+                            <p>Focado na operação rápida de balcão, o sistema conta com PDV completo, controle de estoque integrado, gestão rigorosa de caixa e vendas. Suporta regras complexas como pagamentos mistos, pagamentos parciais e o controle preciso de fiado para clientes recorrentes.</p>
+                        </div>
+                        <div class="projeto-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                        </div>
+                        <div class="projeto-links">
+                            <!-- ADICIONAR URL DO PROJETO -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Demonstração</a>
+                           
+                        </div>
+                    </article>
 
-  <!-- Modal imagens card  -->
-  <div id="modal" class="modal">
-    <span class="modal-close">&times;</span>
-    <img class="modal-content" id="modal-image">
-  </div>
-</section>
-<!-- Fim modal imagens card -->
+                    <!-- Projeto 3 -->
+                   <article class="projeto-card animate-on-scroll">
+    <div class="projeto-header">
+        <span class="projeto-categoria">Web App (PWA) • Gestão Esportiva</span>
+        <span class="projeto-status status-real"><i class="bi bi-circle-fill"></i> Sistema Real</span>
+    </div>
+    <h3 class="projeto-titulo">ALTM Ranking</h3>
+    <p class="projeto-descricao">Aplicativo web instalável no celular (PWA) para acompanhamento público e gestão administrativa de competições de tênis de mesa.</p>
+    <div class="projeto-detalhes">
+        <strong>Arquitetura & Lógica de Negócio:</strong>
+        <p>O sistema é dividido em duas camadas: uma interface pública interativa para os atletas acompanharem suas classificações e um painel administrativo fechado e protegido por login. A aplicação processa o lançamento de resultados de torneios e executa cálculos automáticos complexos, atualizando o ranking acumulado e a progressão de etapas. Toda a estrutura de dados foi desenhada para ser escalável e preparada para futuras integrações automatizadas.</p>
+    </div>
+    <div class="projeto-tech">
+        <span class="tech-tag">PWA</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">Firebase Auth</span>
+        <span class="tech-tag">Firestore</span>
+    </div>
+    <div class="projeto-links">
+        <a href="https://ranking-altm.web.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="bi bi-phone"></i> Acessar Web App</a>
+    </div>
+</article>
 
+                    <article class="projeto-card animate-on-scroll">
+    <div class="projeto-header">
+        <span class="projeto-categoria">Web App (PWA) • Pet Shop</span>
+        <span class="projeto-status status-real"><i class="bi bi-circle-fill"></i> Sistema real</span>
+    </div>
+    <h3 class="projeto-titulo">Pet Agenda Pro</h3>
+    <p class="projeto-descricao">Aplicativo web instalável (PWA) desenvolvido para a organização eficiente de horários e rotinas de banho e tosa em Pet Shops.</p>
+    <div class="projeto-detalhes">
+        <strong>Foco da Solução:</strong>
+        <p>Arquitetado para garantir extrema agilidade na operação diária do Banho e tosa. O sistema centraliza a agenda de banho e tosa, monitora o status dos pets em tempo real. Conta com persistência de dados e rotinas automáticas de backup, entregando segurança e usabilidade perfeita para a correria do dia a dia da equipe.</p>
+    </div>
+    <div class="projeto-tech">
+        <span class="tech-tag">PWA</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Firebase</span>
+    </div>
+    <div class="projeto-links">
+        <a href="demo-agenda.html" class="btn btn-sm btn-primary"><i class="bi bi-image"></i> Ver Interface</a>
+    </div>
+</article>
 
+                    <!-- Projeto 5 -->
+                    <article class="projeto-card animate-on-scroll">
+                        <div class="projeto-header">
+                            <span class="projeto-categoria">Website • Pet Shop</span>
+                            <span class="projeto-status status-real"><i class="bi bi-circle-fill"></i> Projeto real</span>
+                        </div>
+                        <h3 class="projeto-titulo">Cantinho do Pelo</h3>
+                        <p class="projeto-descricao">Website institucional criado para fortalecer a presença digital de um negócio do setor pet.</p>
+                        <div class="projeto-detalhes">
+                            <strong>Características:</strong>
+                            <p>Interface projetada com foco em SEO, experiência mobile otimizada e design altamente responsivo. Inclui galeria estruturada, apresentação clara de serviços e CTAs estratégicos direcionados para atendimento via WhatsApp.</p>
+                        </div>
+                        <div class="projeto-tech">
+                            <span class="tech-tag">Front-end</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://banho-e-tosa.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Demonstração</a>
+                            <!-- ADICIONAR URL DO REPOSITORIO SE APLICAVEL -->
+                        </div>
+                    </article>
 
-  <section class="footer-section">
+                    <!-- Projeto 6 -->
+                    <article class="projeto-card animate-on-scroll">
+                        <div class="projeto-header">
+                            <span class="projeto-categoria">Website • Conteúdo digital</span>
+                            <span class="projeto-status status-real"><i class="bi bi-circle-fill"></i> Projeto real</span>
+                        </div>
+                        <h3 class="projeto-titulo">YLOUT</h3>
+                        <p class="projeto-descricao">Website criado para apresentação de um canal digital, concentrando identidade visual, conteúdo e chamadas para ação.</p>
+                        <div class="projeto-detalhes">
+                            <strong>Características:</strong>
+                            <p>Estruturação de interface focada em consumo de conteúdo, mantendo coesão visual com a marca e organização de links diretos para interação do usuário.</p>
+                        </div>
+                        <div class="projeto-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                        </div>
+                        <div class="projeto-links">
+                            <a href="https://diogo-netto.github.io/WebSite-YLOUT/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Demonstração</a>
+                            <!-- ADICIONAR URL DO REPOSITORIO SE APLICAVEL -->
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Além da Interface Section -->
+        <section id="alem-da-interface" class="alem-interface section bg-surface">
+            <div class="container animate-on-scroll">
+                <div class="section-header center">
+                    <h2 class="section-title">Além da interface</h2>
+                    <p class="section-subtitle">O trabalho não termina no visual. O desenvolvimento de aplicações completas exige arquitetura.</p>
+                </div>
+                
+                <div class="flow-diagram">
+                    <div class="flow-node">Interface</div>
+                    <i class="bi bi-arrow-down flow-arrow"></i>
+                    <div class="flow-node">Regras de negócio</div>
+                    <i class="bi bi-arrow-down flow-arrow"></i>
+                    <div class="flow-node">Dados</div>
+                    <i class="bi bi-arrow-down flow-arrow"></i>
+                    <div class="flow-node">Persistência</div>
+                    <i class="bi bi-arrow-down flow-arrow"></i>
+                    <div class="flow-node highlight">Deploy</div>
+                </div>
+
+                <div class="flow-description">
+                    <p>Meus projetos vão muito além de estruturar telas bonitas. Como Desenvolvedor Front-end, atuo arquitetando soluções robustas que envolvem: estruturar dados, implementar regras de negócio seguras, controlar estados complexos e validar operações. Garanto boas práticas na organização de permissões e controle de acesso, trabalhando de forma eficiente com persistência de dados. Todo o ciclo é finalizado com versionamento rigoroso, publicação contínua (deploy) e manutenção ativa da aplicação.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiência Prática Section -->
+        <section id="experiencia" class="experiencia section">
+            <div class="container animate-on-scroll">
+                <div class="section-header center">
+                    <h2 class="section-title">O que já implementei na prática</h2>
+                </div>
+                
+                <div class="badges-grid">
+                    <div class="badge-card"><i class="bi bi-person-lines-fill"></i> CRUD de produtos e clientes</div>
+                    <div class="badge-card"><i class="bi bi-box-seam"></i> Controle de estoque</div>
+                    <div class="badge-card"><i class="bi bi-shop"></i> PDV</div>
+                    <div class="badge-card"><i class="bi bi-safe"></i> Controle de caixa</div>
+                    <div class="badge-card"><i class="bi bi-credit-card"></i> Pagamentos</div>
+                    <div class="badge-card"><i class="bi bi-file-earmark-bar-graph"></i> Relatórios</div>
+                    <div class="badge-card"><i class="bi bi-calendar-check"></i> Agendamentos</div>
+                    <div class="badge-card"><i class="bi bi-hdd-network"></i> Persistência de dados</div>
+                    <div class="badge-card"><i class="bi bi-fire"></i> Firebase / Firestore</div>
+                    <div class="badge-card"><i class="bi bi-shield-lock"></i> Controle de acesso</div>
+                    <div class="badge-card"><i class="bi bi-cloud-arrow-down"></i> Backups</div>
+                    <div class="badge-card"><i class="bi bi-layout-sidebar"></i> Interfaces administrativas</div>
+                    <div class="badge-card"><i class="bi bi-phone"></i> Responsividade</div>
+                    <div class="badge-card"><i class="bi bi-rocket-takeoff"></i> Deploy</div>
+                    <div class="badge-card"><i class="bi bi-git"></i> Git e versionamento</div>
+                    <div class="badge-card"><i class="bi bi-search"></i> SEO para websites</div>
+                    <div class="badge-card"><i class="bi bi-whatsapp"></i> Integração com WhatsApp</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow Section -->
+        <section id="workflow" class="workflow section bg-surface">
+            <div class="container animate-on-scroll">
+                <div class="section-header center">
+                    <h2 class="section-title">Do desenvolvimento ao deploy</h2>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="bi bi-clipboard-data"></i></div>
+                        <span>Planejamento</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="bi bi-vector-pen"></i></div>
+                        <span>Interface</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="bi bi-code-slash"></i></div>
+                        <span>Implementação</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="bi bi-database"></i></div>
+                        <span>Dados</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="bi bi-bug"></i></div>
+                        <span>Testes</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="bi bi-git"></i></div>
+                        <span>Git</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="bi bi-rocket"></i></div>
+                        <span>Deploy</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="bi bi-tools"></i></div>
+                        <span>Manutenção</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Section -->
+        <section id="contato" class="contato section">
+            <div class="container animate-on-scroll">
+                <div class="contato-box">
+                    <h2 class="contato-title">Vamos construir alguma coisa juntos?</h2>
+                    <p class="contato-text">Estou disponível para projetos, oportunidades profissionais e desenvolvimento de soluções web.</p>
+                    <span class="status-disponivel"><i class="bi bi-circle-fill"></i> Disponível para oportunidades e projetos</span>
+                    
+                    <div class="contato-actions">
+                        <a href="https://wa.me/5532998237962" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                            <i class="bi bi-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://github.com/Diogo-netto" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                        <!-- ADICIONAR O LINK DO SEU LINKEDIN ABAIXO NO ATRIBUTO HREF -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-        <div class="menu-name">
-            <span class="name">Diogo Netto<br>Desenvolvedor Front-End</span>
-          </div>
-
-      <div class="social-links">
-        <a href="https://www.linkedin.com" target="_blank"  aria-label="LinkedIn"  rel="nooperner nooperner"><i class="bi bi-linkedin"></i>LinkedIn</a>
-        <a href=" https://github.com/Diogo-netto " target="_blank"  aria-label="github" rel="nooperner nooperner"><i class="bi bi-github"></i>GitHub</a>
-        <a id="btn-whatsapp" href="https://wa.me/5532998237962?text=Muito prazer me chamo Diogo José Morais Netto, Como posso te ajudar? ." target="_blank" aria-label="whatsapp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-
-             <script>
-                 const phone = '5532998237962'; 
-                 const message = 'Olá, gostaria de um orçamento.'; 
-                 const encoded = encodeURIComponent(message);
-                 const url = `https://wa.me/${phone}?text=${encoded}`;
-
-                 const a = document.getElementById('btn-whatsapp');
-                 a.href = url;
-             </script>
-
-      </div>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <strong>Diogo Netto</strong>
+                <span>Desenvolvedor Front-end • React • TypeScript • Firebase</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Diogo-netto" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <!-- ADICIONAR O LINK DO SEU LINKEDIN ABAIXO -->
+                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="footer-copy">
+                &copy; <span id="current-year">2026</span> Diogo José Morais Netto. Todos os direitos reservados.
+            </div>
+        </div>
     </footer>
 
-    <div class="privacy">
-      <p>© 2025 Diogo Netto | Desenvolvido por <a href="#" target="_blank">Diogo José Morais Netto</a></p>
-    </div>
-  </section>
- </main>
- <!-- Fim da Main -->
-
- <div id="topo">
-    <a href="#topo" class="scroll-to">
-     <img src="img/setaaa.png" alt="Voltar ao topo">
+    <a href="#header" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
     </a>
- </div>
 
- <a href="https://wa.me/5532998237962?text=Muito prazer me chamo Diogo José Morais Netto, Como posso te ajudar?" 
-   class="whatsapp-float" 
-   target="_blank" 
-   aria-label="WhatsApp" 
-   rel="noopener noreferrer">
-   <i class="bi bi-whatsapp"></i>
-</a>
-
-
+    <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>

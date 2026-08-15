@@ -1,965 +1,1023 @@
-/* ESTILO GERAL */
+/* ==========================================================================
+   CSS Variables & Tokens
+   ========================================================================== */
+:root {
+    /* Cores de Fundo (Backgrounds) */
+    --bg-main: #0a0a0a;
+    --bg-surface: #121212;
+    --bg-surface-elevated: #1a1a1a;
+    
+    /* Cores de Texto */
+    --text-primary: #f8f9fa;
+    --text-secondary: #a1a1aa;
+    --text-muted: #52525b;
+    
+    /* Cores de Destaque (Accent) */
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-glow: rgba(59, 130, 246, 0.15);
+    
+    /* Utilitários */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.15);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+    
+    /* Dimensões */
+    --container-width: 1200px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    
+    /* Transições */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* ==========================================================================
+   Reset & Global Styles
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-    content: ""; /* Essencial para pseudoelementos */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    background-image: url('img/Gemini_Generated_Image_gkbb0qgkbb0qgkbb.png'); /* Substitua pelo link da imagem */
-    background-repeat: no-repeat;
-    background-position: center center; /* Centraliza a imagem */
-    background-attachment: fixed; /* Mantém a imagem fixa ao rolar */
-    background-size: cover; /* Faz a imagem cobrir todo o espaço */
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 0.671); 
-    background-blend-mode: multiply;
-}
-
-body::before {
-    content: ""; /* Essencial para pseudoelementos */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('URL_DA_SUA_IMAGEM');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-   
-}
-
-body::-webkit-scrollbar {
-    width: 0; /* Largura da barra de rolagem vertical */
-    height: 0; /* Altura da barra de rolagem horizontal */
-}
-
-
-.principal {
-    display: flex;
-    justify-content: space-around;
-   
-}
-.logo p {
-    top: 17px;
-    padding: 10px 10px;
-    font-size: 11px;
-    font-weight: 600;
-    background: radial-gradient(circle at center, #11141B 0%, #1B1D28 50%, #173B3D 100%);
-    border: 0;
-    border-radius: 30px;
-    cursor: pointer;
-    color: rgb(245, 239, 239);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative; /* ESSENCIAL para a animação do raio */
-    overflow: hidden; /* Garante que o raio fique dentro do botão */
-    z-index: 1; /* Garante que o conteúdo do botão fique acima do raio */
-}
-
-/* Efeito de hover */
-.logo p:hover {
-    transform: scale(1.05); /* Um zoom mais sutil para o botão */
-    box-shadow: 0px 0px 8px #111111;
-    background: radial-gradient(circle at center, #1B1D28 0%, #2A2F3D 50%, #294D50 100%); /* Um gradiente um pouco mais claro */
-}
-
-/* O "Raio" - Pseudoelemento */
-.logo p::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2px; /* A espessura do raio é menor para um botão */
-    background: linear-gradient(to right, transparent, #00BFFF, transparent);
-    animation: shineEffect 2s linear infinite; /* Animação mais rápida que a do título */
-    z-index: 0; /* Garante que o raio fique por baixo do texto */
-}
-
-.logo a {
-     text-decoration: none;
-}
-
-/* Definição da animação do "raio" */
-@keyframes shineEffect {
-    0% {
-        left: -100%;
-    }
-    50% {
-        left: 0%;
-    }
-    100% {
-        left: 100%;
-    }
-}
-
-
-
-/* Estilo para o menu */
-.menu {
-    margin-top: 9px; /* Margem superior */
-    display: block; /* Ou flex, dependendo do seu layout */
-}
-
-.menu a {
-    position: relative;
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 15px 20px;
-    display: inline-block;
-    overflow: hidden; /* Evita que o efeito ultrapasse o link */
-}
-
-.menu a span {
-    position: absolute;
-    bottom: 10px; /* Posiciona a linha na parte inferior do link */
-    left: 0;
-    width: 0;
-    height: 2px; /* Define a altura da linha (horizontal) */
-    background-color: white; /* Cor da linha */
-    transition: width 0.3s ease, left 0.3s ease; /* Animação suave */
-}
-
-
-/* hamburguer */
-
-.menu-container {
-    position: relative;
-
-}
-
-.menu-button {
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: red;
-    transition: transform 0.2s ease;
-    display: none; /* Ocultar o botão de menu hambúrguer em telas grandes */
-
-}
-
-
-.menu-button:hover {
-    transform: scale(1.1);
-
-}
-
-
-.nav-menu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-
-.nav-menu a {
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-    margin: 10px 0;
-   
-}
-
-.nav-menu a:hover {
-    text-decoration: underline;
-
-}
-
-
-/* part1 */
-.titulo {
-    margin-top: 110px;
-    background: radial-gradient(circle at center, #11141B 0%, #1B1D28 50%, #173B3D 100%);
-    border-radius: 15px;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 20px 20px 20px;
-    width: 80%; /* Ajuste a largura conforme necessário */
-    height: 250px; /* Ajuste a altura conforme necessário */
-    margin-left: auto;   
-    margin-right: auto;  
-    position: relative; 
-    overflow: hidden; 
-    padding: 20px; /* Reduzi o padding para um valor único */
-    display: flex; 
-    flex-direction: column;
-    align-items: center; /* ISSO VAI RESOLVER O PROBLEMA */
-}
-
-/* Estilo para o título principal dentro do .titulo */
-.titulo h1 { 
-    font-size: 2.5em; 
-    margin: 0; /* Remove a margem padrão para evitar espaços extras */
-}
-
-/* Estilo para o parágrafo dentro do .titulo */
-.titulo p { 
-    font-size: 1.2em; 
-    line-height: 1.5;
-    text-align: center; /* Especifique o alinhamento de texto aqui */
-    margin: 10px 0 0 0; /* Adiciona um espaço superior, mas remove as margens laterais */
-}
-
-/* Pseudoelemento para o "raio" */
-.titulo::after {
-    content: ''; 
-    position: absolute;
-    bottom: 0; 
-    left: -100%; 
-    width: 100%; 
-    height: 10px; 
-    background: linear-gradient(to right, transparent, #00BFFF, transparent);
-    animation: shineEffect 3s linear infinite; 
-}
-
-/* Definição da animação do "raio" */
-@keyframes shineEffect {
-    0% {
-        left: -100%; 
-    }
-    50% {
-        left: 0%; 
-    }
-    100% {
-        left: 100%; 
-    }
-}
-
-
-
-.texto h1 {
-    padding: 30px ;
-    font-size: 38px;
-    font-weight: 800;
-}
-
-.texto p {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-
-
-
-
-
-
-/* Estilo da seção */
-section {
-    padding: 40px 20px;
-    background-color: #f4f4f4; /* Cor de fundo da seção */
-}
-
-/* Estilo do título */
-.especialidades h1 {
-    text-align: center;
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 20px;
-    margin-top: 90px;
-    font-weight: 800;
-}
-
-.especialidades span {
-    color: #1a1653; /* Destaque para a palavra "Especialidades" */
-}
-
-
-
-
-
-/* Estilização do contêiner principal */
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 90px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    
-}
-
-
-/* Estilização individual dos cards */
-.card1 {
-    background-color: #fff; /* Fundo branco */
-    border-radius: 15px; /* Borda arredondada */
-    width: 500px; /* Largura fixa */
-    height: 520px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: center; /* Centraliza o conteúdo */
-    margin-top: 90px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-
-.card1:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    transition: 0.3s ease-in-out;
-}
-
-
-
-.card1 i {
-    font-size: 40px; /* Define o tamanho dos ícones */
-    color: #0a0738; /* Define a cor padrão dos ícones */
-    margin: 10px 5px; /* Adiciona margem ao redor dos ícones */
-    vertical-align: middle; /* Alinha os ícones ao texto */
-    margin-top: 25px;
-  }
-
-/* Títulos dos cards */
-.card1 h3 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    margin-top: 15px;
-}
-
-/* Texto dos cards */
-.card1 p {
-    font-size: 19px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
     line-height: 1.6;
-    color: #000000;
-    font-weight: 600;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-
-
-
-/* part 3 apresentar */
-/* Estilo para a seção part3 */
-.apresentar {
-    text-align: center;
-    margin-top: 45px;
-    padding: 0 20px; /* Para evitar que o texto fique muito próximo das bordas */
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
 }
 
-.apresentar span {
-    font-size: 20px;
-    font-weight: 700;
+ul {
+    list-style: none;
 }
 
-.apresentar h1 {
-    font-size: 36px;
-    color: #0a0738; /* Azul */
-    margin-bottom: 20px; /* Espaço entre o título e os elementos abaixo */
-    font-weight: 800;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.apresentar p {
-    font-size: 20px;
-    line-height: 1.6; /* Para melhorar a leitura */
-    margin: 20px auto; /* Espaço no topo e na parte inferior */
-    max-width: 800px; /* Limita a largura do texto para que não se estenda muito */
-    color: #000000; /* Cor para facilitar a leitura */
-    font-weight: 600;
+/* Acessibilidade - Link para pular conteúdo */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-color);
+    color: white;
+    padding: 8px;
+    z-index: 9999;
+    transition: top var(--transition-fast);
+}
+.skip-link:focus {
+    top: 0;
 }
 
+/* Foco visível global */
+*:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
 
-
-
-/* Container principal - sem alteração */
+/* ==========================================================================
+   Utilitários
+   ========================================================================== */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.bg-surface {
+    background-color: var(--bg-surface);
+}
+
+/* Botões */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+}
+
+.btn-lg {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--text-secondary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: var(--bg-surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.tag-sm {
+    margin-bottom: 16px;
+}
+
+.section-header {
+    margin-bottom: 48px;
+}
+
+.section-header.center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
 }
 
-/* Grid de projetos - sem alteração */
-.projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    max-width: 600px;
 }
 
-/* Cartão do projeto */
-.project-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  max-width: 560px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s; /* Adicionado box-shadow para o hover */
+/* ==========================================================================
+   Header & Navegação
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    z-index: 1000;
+    transition: all var(--transition-normal);
 }
 
-/* Efeito de destaque no hover */
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+.header.scrolled {
+    height: 70px;
+    border-bottom-color: var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
-/* Wrapper da imagem */
-.project-img-wrapper {
-  cursor: pointer;
-  /* Garantir que a imagem ocupe a maior parte do cartão */
-  height: 250px; /* Aumentar a altura para dar mais espaço à imagem */
-  overflow: hidden;
-}
-
-/* Estilo da imagem */
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Recorta a imagem para preencher o espaço sem distorcer */
-  display: block;
-}
-
-/* Informações do projeto - Reduzindo o destaque do texto */
-.project-info {
-  padding: 15px; /* Diminuir o padding */
-}
-
-.project-info h3 {
-  margin-bottom: 8px; /* Diminuir a margem */
-  font-size: 1.2rem; /* Reduzir o tamanho da fonte */
-  color: #0a0738;
-  font-weight: 800;
-}
-
-.project-info p {
-  font-size: 1.0rem; /* Reduzir o tamanho da fonte */
-  margin-bottom: 10px;
-  color: #000000; /* Tornar a cor mais suave */
-  font-weight: 600;
-}
-
-/* Links do projeto */
-.project-link {
-  display: inline-block;
-  padding: 8px 16px; /* Diminuir o padding */
-  background-color: #0a0738;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s;
-  font-size: 0.9rem;
-}
-
-.project-link:hover {
-  background-color: #0d0a40; /* Cor um pouco mais escura no hover */
-}
-
-/* Modal - sem alteração, já está bom */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(255,255,255,0.3);
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-
-  .footer-section {
-    background-color: #0a0738;
-    padding: 30px;
-  }
-  
-  .footer {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .social-links a {
-    margin-right: 15px;
-    text-decoration: none;
-    color:white;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .social-links a:hover {
-    color: #000000; /* Cor do hover, ajustável */
-  }
-  
-  .menu-name {
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.main-nav {
     display: flex;
     align-items: center;
-  }
-  
-  .name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 50px;
+    gap: 32px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-link {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-primary);
+}
+
+.mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px; /* Offset for header */
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.hero-social {
+    display: flex;
+    gap: 16px;
+}
+
+.hero-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    transition: all var(--transition-fast);
+}
+
+.hero-social a:hover {
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+    background-color: var(--bg-surface-elevated);
+}
+
+/* Abstract Visual */
+.hero-visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.abstract-dashboard {
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 4 / 3;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.abstract-dashboard::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dash-header {
+    height: 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 8px;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.red { background-color: #ef4444; }
+.dot.yellow { background-color: #f59e0b; }
+.dot.green { background-color: #10b981; }
+
+.dash-body {
+    display: flex;
+    flex: 1;
+    z-index: 1;
+}
+
+.dash-sidebar {
+    width: 20%;
+    border-right: 1px solid var(--border-color);
+    background-color: rgba(0,0,0,0.1);
+}
+
+.dash-content {
+    flex: 1;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.dash-card {
+    background-color: var(--bg-surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: transform var(--transition-normal);
+}
+
+.dash-card:hover {
+    transform: translateY(-2px);
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+}
+
+.dash-card i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   Indicadores Section
+   ========================================================================== */
+.indicadores-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.indicador-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+}
+
+.indicador-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.indicador-text strong {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.indicador-text span {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Sobre Section
+   ========================================================================== */
+.sobre-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sobre-text p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.sobre-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Stack Section
+   ========================================================================== */
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.stack-category {
+    background-color: var(--bg-main);
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+}
+
+.stack-category h3 {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tech-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.tech-list i {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    width: 24px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Projetos Section
+   ========================================================================== */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 32px;
+}
+
+.projeto-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.projeto-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--text-secondary);
+}
+
+.projeto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.projeto-categoria {
+    color: var(--accent-color);
+}
+
+.projeto-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background-color: var(--bg-surface-elevated);
+}
+
+.projeto-status i {
+    font-size: 0.5rem;
+}
+
+.status-real i { color: #10b981; }
+.status-dev i { color: #f59e0b; }
+
+.projeto-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.projeto-descricao {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    font-size: 1rem;
+}
+
+.projeto-detalhes {
+    background-color: var(--bg-main);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.projeto-detalhes strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+.projeto-detalhes p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.projeto-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    background-color: var(--bg-surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-muted);
+}
+
+.projeto-links {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   Além da Interface & Workflow (Fluxos)
+   ========================================================================== */
+.flow-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.flow-node {
+    padding: 16px 24px;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.flow-node.highlight {
+    background-color: var(--accent-color);
     color: #fff;
-  }
-  
-
-.name:hover {
-    color: #020202; /* Cor do hover */
-  }
- 
-
-  .privacy {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 15px;
-    color:#fff;
-    font-weight: bold;
-  }
-
-  .privacy a {
-    color: red;
-  } 
-  
-
-.bi {
-    padding: 10px;
-} 
-
-
-
-  
-/* Estiliza o link da seta */
-.scroll-to {
-    position: fixed;
-    bottom: 5px;
-    right: 20px;  
-    z-index: 1000; 
-    background-color: #000; 
-    border-radius: 50%; 
-    padding: 10px; 
-    text-align: center;
+    border-color: var(--accent-color);
 }
 
-/* Estiliza a imagem da seta */
-.scroll-to img {
-    width: 40px; 
-    height: auto;
-    filter: invert(100%) brightness(100%); 
+.flow-arrow {
+    color: var(--text-muted);
+    font-size: 1.25rem;
 }
 
+/* Workflow Timeline */
+.timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 24px;
+    scrollbar-width: none;
+}
+.timeline::-webkit-scrollbar {
+    display: none;
+}
 
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 100px;
+}
 
-#topo img {
+.step-icon {
     width: 50px;
     height: 50px;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
     border-radius: 50%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--accent-color);
 }
 
-#topo img:hover {
-    transform: scale(1.2);
+.timeline-step span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
 }
 
-
-
-
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;     /* distância do fundo */
-  left: 20px;       /* distância da esquerda */
-  background-color: #25d366;  /* cor oficial do WhatsApp */
-  color: white;
-  font-size: 28px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 60px; /* centraliza o ícone */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999; /* fica por cima de tudo */
-  transition: all 0.3s ease;
+.timeline-line {
+    height: 2px;
+    flex: 1;
+    min-width: 30px;
+    background-color: var(--border-color);
+    margin-bottom: 30px; /* offset to align with icons */
 }
 
-.whatsapp-float:hover {
-  background-color: #1ebe57;
-  transform: scale(1.1);
+.flow-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.125rem;
 }
 
+/* ==========================================================================
+   Experiência (Badges Grid)
+   ========================================================================== */
+.badges-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
 
+.badge-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
 
+.badge-card:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+    background-color: rgba(59, 130, 246, 0.05);
+}
 
+.badge-card i {
+    color: var(--accent-color);
+}
 
+/* ==========================================================================
+   Contato Section
+   ========================================================================== */
+.contato-box {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 64px 32px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.contato-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
 
-/* Media Query para telas menores (480px ou menos) */
-@media (max-width: 480px) {
+.contato-text {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    margin-bottom: 24px;
+}
 
+.status-disponivel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
 
-    body {
-        min-height: 100vh; /* Garantir que o body ocupe pelo menos toda a altura da tela */
-    }
+.status-disponivel i {
+    color: #10b981;
+    font-size: 0.6rem;
+}
 
+.contato-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
 
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: 48px 0;
+    background-color: var(--bg-main);
+}
 
-    .logo p {
-        font-size: 14px;
-        margin-bottom: 29px;
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.footer-info strong {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+}
+
+.footer-info span {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9375rem;
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.footer-copy {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 16px;
+}
+
+/* ==========================================================================
+   Voltar ao topo
+   ========================================================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 99;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* ==========================================================================
+   Animações Base (Intersection Observer)
+   ========================================================================== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .animate-on-scroll { transition: none; opacity: 1; transform: none; }
+    .hero-visual::before { animation: none; }
+    .projeto-card { transition: border-color var(--transition-fast); transform: none !important; }
+}
+
+/* ==========================================================================
+   Media Queries (Responsividade)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .flow-diagram { flex-direction: column; }
+    .flow-arrow { transform: rotate(0deg); margin: 8px 0; }
     
-    }
-
-    .menu {
-        display: none; /* Oculta o menu desktop */
-    }
-
-    #menu-button {
-        display: block; /* Garante que o botão hambúrguer fique visível */
-    }
-
-    .titulo {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        box-sizing: border-box;
-        text-align: center;
-        overflow: hidden; /* Garante que o conteúdo não ultrapasse o container */
-    }
-
-    .texto h1 {
-        font-size: 24px;
-        word-wrap: break-word; /* Evita que palavras longas ultrapassem o limite */
-    }
-
-    .texto p {
-        font-size: 16px;
-    }
-
-    .especialidades h1 {
-        font-size: 20px;
-    }
-
-    .card-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .card1 {
-        width: 100%;
-        padding: 15px;
-        box-sizing: border-box;
-    }
-
-    .card1 i {
-        font-size: 24px;
+    .hero-container {
+        grid-template-columns: 1fr;
         text-align: center;
     }
     
-
-
-    .formulario {
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .formulario h2 {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .formulario form input, 
-    .formulario form textarea {
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 14px;
-    }
-
-    .footer-section {
-        background-color: #1609c2;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-        clear: both;
-        font-size: 14px;
-        border-top: 2px solid #0056b3; /* Adiciona uma linha superior para destaque */
+    .hero-content {
+        margin: 0 auto;
     }
     
-    .footer-section .social-links {
-        display: flex;
+    .hero-actions, .hero-social {
         justify-content: center;
-        gap: 20px; /* Espaçamento entre os ícones */
-        margin-top: 10px;
-    }
-
-    .name {
-        font-size: 15px;
     }
     
-    .footer-section .social-links a {
-        font-size: 18px;
-        color: #fff;
-        transition: transform 0.3s, color 0.3s;
+    .hero-visual {
+        max-width: 500px;
+        margin: 0 auto;
     }
-    
-    .footer-section .social-links a:hover {
-        transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
-    }
-
-    .whatsapp-float {
-        margin-bottom: 188px;
-        font-size: 17px;
-        border: 8px;
-    }
-
-    .privacy p {
-        margin-bottom: 20px;
-
-    }
-    
-   
-    
-
 }
 
-
-
-
-
-
-
-
-
-/* Media Query para telas médias (768px ou menos) */
 @media (max-width: 768px) {
-
-
-    body {
-        min-height: 100vh; /* Garantir que o body ocupe pelo menos toda a altura da tela */
-    
-    }
-
-    
-    header .principal {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 10px;
-    }
-
-    .menu {
-        display: none; /* Oculta o menu desktop */
-    }
-
-    #menu-button {
-        display: block; /* Garante que o botão hambúrguer fique visível */
-    }
-
-    .titulo {
-        width: 100%;
-        padding: 30px;
-        text-align: center;
-        box-sizing: border-box;
-        overflow: hidden; /* Evita conteúdo ultrapassar limites */
-    }
-
-    .texto h1 {
-        font-size: 28px;
-        word-wrap: break-word;
-    }
-
-    .especialidades h1 {
-        font-size: 24px;
-    }
-
-    .card-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .card1 {
-        width: 100%;
-        padding: 15px;
-        box-sizing: border-box;
-    }
-
-    .card1 i {
-        font-size: 28px;
-        text-align: center;
-    }
-
-  
-
-
-    .formulario {
-        padding: 30px;
-        box-sizing: border-box;
-    }
-
-    .formulario h2 {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .formulario form input, 
-    .formulario form textarea {
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 16px;
-    }
-
-
-
-    .footer-section {
-        background-color: #0a0738;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-        clear: both;
-        font-size: 14px;
-        border-top: 2px solid #0056b3; /* Adiciona uma linha superior para destaque */
-    }
-    
-
-    .name {
-        font-size: 15px;
-        margin-left: 59px;
-    }
-
-    
-    .footer-section .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 20px; /* Espaçamento entre os ícones */
-        margin-top: 10px;
-    }
-    
-    .footer-section .social-links a {
-        font-size: 18px;
-        color: #fff;
-        transition: transform 0.3s, color 0.3s;
-    }
-    
-    .footer-section .social-links a:hover {
-        transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
-    }
-    
-
-    #topo img {
-        width: 30px; /* Diminui o tamanho na media query */
-        height: auto; /* Mantém a proporção */
-        
-    }
-
-    #topo {
-        margin-bottom: 20px;
-    }
-
-
-    .whatsapp-float {
-        margin-bottom: 157px;
-        font-size: 17px;
-        border: 8px;
-    }
-    
-    
-}
-
-
-
-
-
-/* RESPONSIVIDADE MENU DE HAMBURGUER */
-/* Exibição para celulares */
-@media (max-width: 768px) {
-        .nav-menu {
-        display: none; /* Oculto por padrão */
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #161e33;
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-        min-width: 150px;
-        white-space: nowrap;
-        border-radius: 5px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        z-index: 1;
-    }
-
-    .nav-menu.show {
-        display: flex; /* Exibe quando tem a classe 'show' */
-    }
-
-    .nav-menu a {
+    .mobile-toggle {
         display: block;
-        padding: 10px 15px;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 80px; /* header height */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-surface);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 24px;
+        gap: 24px;
+        clip-path: circle(0% at top right);
+        transition: clip-path 0.4s ease-in-out;
+        z-index: 999;
+    }
+
+    .header.scrolled .main-nav {
+        top: 70px;
+    }
+
+    .main-nav.menu-open {
+        clip-path: circle(150% at top right);
+    }
+
+    .nav-list {
+        flex-direction: column;
         width: 100%;
         text-align: center;
-        color: white;
-        text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .nav-menu a:last-child {
-        border-bottom: none;
+    .nav-cta {
+        width: 100%;
     }
 
-    .menu-button {
-        position: absolute;
-        top: 20px;
-        right: 20px; /* Posicionado à direita */
-        color: white;
-        background: none;
-        border: none;
-        font-size: 20px;
-        cursor: pointer;
+    .indicadores-container {
+        grid-template-columns: 1fr;
     }
 
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-box {
+        padding: 48px 24px;
+    }
+    
+    .contato-actions {
+        flex-direction: column;
+    }
+    
+    .contato-actions .btn {
+        width: 100%;
+    }
 }
 
-
-
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+    }
+    
+    .dash-content {
+        grid-template-columns: 1fr;
+    }
+}
